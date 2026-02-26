@@ -1,34 +1,37 @@
 package plaindoll;
 
-import java.util.Random;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
-public class Welcomer {
-    
-    private static final String[] HUNTER_REPLIES = {
-        "The hunter stalks its prey in the digital jungle",
-        "A true hunter never gives up the chase",
-        "The night is dark and full of hunters"
-    };
-    
-    private static final Random RANDOM = new Random();
-    
-    public String sayWelcome() {
-        return "Welcome";
-    }
-    
-    public String sayFarewell() {
-        return "Farewell";
-    }
-    
-    public String sayHunter() {
-        return "Hunter";
-    }
-    
-    public String saySilver() {
-        return "Silver";
-    }
-    
-    public String getHunterReply() {
-        return HUNTER_REPLIES[RANDOM.nextInt(HUNTER_REPLIES.length)];
-    }
+import org.junit.Test;
+
+public class WelcomerTest {
+        
+        private Welcomer welcomer = new Welcomer();
+
+        @Test
+        public void welcomerSaysWelcome() {
+                assertThat(welcomer.sayWelcome(), containsString("Welcome"));
+        }
+
+        @Test
+        public void welcomerSaysFarewell() {
+                assertThat(welcomer.sayFarewell(), containsString("Farewell"));
+        }
+
+        @Test
+        public void welcomerSaysHunter() {
+                assertThat(welcomer.sayHunter(), containsString("Hunter"));
+        }
+
+        @Test
+        public void welcomerSaysSilver() {
+                assertThat(welcomer.saySilver(), containsString("Silver"));
+        }
+
+        @Test
+        public void welcomerSaysHunterReply() {
+                String reply = welcomer.getHunterReply();
+                assertTrue(reply.contains("hunter"));
+        }
 }
