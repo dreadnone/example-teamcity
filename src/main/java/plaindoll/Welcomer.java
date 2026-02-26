@@ -16,3 +16,11 @@ public class Welcomer{
 		return "something in the way";
 	}
 }
+public String getHunterReply() {
+    String[] replies = {
+        "The hunter stalks its prey in the digital jungle",
+        "A true hunter never gives up the chase",
+        "The night is dark and full of hunters"
+    };
+    return replies[new java.util.Random().nextInt(replies.length)];
+}

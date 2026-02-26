@@ -7,3 +7,8 @@ public class HelloPlayer{
 		System.out.println(welcomer.sayFarewell());
 	}
 }
+@Test
+public void welcomerSaysHunter() {
+    String reply = welcomer.getHunterReply();
+    assertTrue(reply.contains("hunter"));
+}
