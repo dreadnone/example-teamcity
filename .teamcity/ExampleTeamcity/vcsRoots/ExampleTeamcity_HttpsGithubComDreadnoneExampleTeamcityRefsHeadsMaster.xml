@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a14c2d0d-06d6-4cdd-9482-54ccb7111793" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>https://github.com/dreadnone/example-teamcity#refs/heads/master</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="credentialsJSON:735cfbb6-b988-4992-8028-4ddfb88e6ec6" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="teamcity:branchSpec" value="refs/heads/*" />
+  <param name="url" value="https://github.com/dreadnone/example-teamcity.git" />
+  <param name="useAlternates" value="AUTO" />
+  <param name="username" value="dreadnone" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+

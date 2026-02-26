@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7f3dac62-6a2f-484b-b8fb-6689ed4a112e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>build_master</name>
+  <description>Build for master branch with deployment to Nexus</description>
+  <settings>
+    <options>
+      <option name="artifactRules" value="target/*.jar =&gt; artifacts" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="Maven2" name="Deploy to Nexus" type="Maven2">
+        <parameters>
+          <param name="goals" value="clean deploy" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="userSettingsSelection" value="settings.xml" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="ExampleTeamcity_HttpsGithubComDreadnoneExampleTeamcityRefsHeadsMaster1" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
