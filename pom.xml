@@ -50,13 +50,14 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Releases</name>
+            <url>http://93.77.191.55:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
-<distributionManagement>
-    <repository>
-        <id>nexus</id>
-        <name>Nexus Releases</name>
-        <url>http://93.77.191.55:8081/repository/maven-releases/</url>
-    </repository>
-</distributionManagement>
